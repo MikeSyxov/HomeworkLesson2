@@ -5,7 +5,19 @@
 // 782 -> 8
 // 918 -> 1
 
-int ranNum = new Random().Next(100, 1000);
+int ReadInt(string message)
+{
+    Console.Write(message);                                          // Вывод приглашения
+    int number = System.Convert.ToInt32(Console.ReadLine());           // Чтение строки и преобразование в число
+    return number;                                                     // Возврат целого числа
+}
 
-System.Console.WriteLine(ranNum);
-System.Console.WriteLine(ranNum / 10 % 10);
+int numUser = ReadInt("Введите трехзначное число: ");
+
+if (numUser < 100 || numUser > 999)
+{
+    Console.WriteLine("Вы ввели не трехзначное число, повторите ввод");
+    return;
+}
+System.Console.WriteLine(numUser);
+System.Console.WriteLine(numUser / 10 % 10);
